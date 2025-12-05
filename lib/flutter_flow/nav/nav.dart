@@ -266,14 +266,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => CalendarDetailPostWidget(),
             ),
             FFRoute(
-              name: CreateAccountWidget.routeName,
-              path: CreateAccountWidget.routePath,
-              builder: (context, params) => CreateAccountWidget(),
-            ),
-            FFRoute(
               name: BlockednumbersWidget.routeName,
               path: BlockednumbersWidget.routePath,
               builder: (context, params) => BlockednumbersWidget(),
+            ),
+            FFRoute(
+              name: CreateAccountWidget.routeName,
+              path: CreateAccountWidget.routePath,
+              builder: (context, params) => CreateAccountWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

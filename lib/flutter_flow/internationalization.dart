@@ -3106,49 +3106,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ms': '',
     },
   },
-  // createAccount
-  {
-    '1n4o1dtd': {
-      'en': 'Welle',
-      'id': '',
-      'ms': '',
-    },
-    'or0dqme5': {
-      'en': 'Create an account',
-      'id': 'Memulai',
-      'ms': 'Mulakan',
-    },
-    '41j9d6im': {
-      'en': 'Use the form below to get started.',
-      'id': 'Gunakan formulir di bawah ini untuk memulai.',
-      'ms': 'Gunakan borang di bawah untuk bermula.',
-    },
-    '5cspw1cj': {
-      'en': 'Sign up with Google',
-      'id': '',
-      'ms': '',
-    },
-    '6uvgimgy': {
-      'en': 'Sign up with Apple',
-      'id': '',
-      'ms': '',
-    },
-    'njtdxbz8': {
-      'en': 'Already have an account?',
-      'id': 'Sudah memiliki akun?',
-      'ms': 'Sudah mempunyai akaun?',
-    },
-    'lycxr7qy': {
-      'en': 'Log In',
-      'id': 'Gabung',
-      'ms': 'Log masuk',
-    },
-    'k8f078qg': {
-      'en': 'Home',
-      'id': 'Rumah',
-      'ms': 'Rumah',
-    },
-  },
   // Blockednumbers
   {
     'a9vchath': {
@@ -3175,6 +3132,54 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '306-234-4512',
       'id': '',
       'ms': '',
+    },
+  },
+  // CreateAccount
+  {
+    'ctfmnqfv': {
+      'en': 'Welle',
+      'id': '',
+      'ms': '',
+    },
+    'r04biird': {
+      'en': 'Create an account',
+      'id': 'Selamat Datang kembali!',
+      'ms': 'Selamat kembali!',
+    },
+    's7vjzhnz': {
+      'en': 'Use the form below to get started.',
+      'id': 'Gunakan formulir di bawah ini untuk mengakses akun Anda.',
+      'ms': 'Gunakan borang di bawah untuk mengakses akaun anda.',
+    },
+    'e9rkhtl4': {
+      'en': 'Sign up with Google',
+      'id': '',
+      'ms': '',
+    },
+    'hhg3ge63': {
+      'en': 'Sign up with Apple',
+      'id': '',
+      'ms': '',
+    },
+    'zkhi22bz': {
+      'en': 'Use a social platform to continue',
+      'id': 'Gunakan platform sosial untuk melanjutkan',
+      'ms': 'Gunakan platform sosial untuk meneruskan',
+    },
+    'c2sf1y6y': {
+      'en': 'Already have an account?',
+      'id': 'Tidak punya akun?',
+      'ms': 'Tiada akaun?',
+    },
+    'fn3cc1s1': {
+      'en': 'Log In',
+      'id': 'Buat Akun',
+      'ms': 'Buat akaun',
+    },
+    'skl334v4': {
+      'en': 'Home',
+      'id': 'Rumah',
+      'ms': 'Rumah',
     },
   },
   // modal_Message

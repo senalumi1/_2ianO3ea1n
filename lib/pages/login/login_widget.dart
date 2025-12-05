@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -315,110 +316,67 @@ class _LoginWidgetState extends State<LoginWidget>
                           ),
                           Padding(
                             padding: EdgeInsets.all(10.0),
-                            child: Container(
-                              width: 500.0,
-                              height: 52.3,
-                              constraints: BoxConstraints(
-                                minWidth: 351.9,
-                                maxWidth: 520.0,
-                              ),
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                boxShadow: [
-                                  BoxShadow(
-                                    blurRadius: 4.0,
-                                    color: Color(0x33000000),
-                                    offset: Offset(
-                                      0.0,
-                                      2.0,
-                                    ),
-                                  )
-                                ],
-                                borderRadius: BorderRadius.circular(24.0),
-                                border: Border.all(
-                                  color: FlutterFlowTheme.of(context).lineColor,
+                            child: InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                GoRouter.of(context).prepareAuthEvent();
+                                final user =
+                                    await authManager.signInWithGoogle(context);
+                                if (user == null) {
+                                  return;
+                                }
+
+                                context.goNamedAuth(
+                                    HomeWidget.routeName, context.mounted);
+                              },
+                              child: Container(
+                                width: 500.0,
+                                height: 52.3,
+                                constraints: BoxConstraints(
+                                  minWidth: 351.9,
+                                  maxWidth: 520.0,
                                 ),
-                              ),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.all(12.0),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(8.0),
-                                      child: SvgPicture.asset(
-                                        'assets/images/Google_Favicon_2025.svg',
-                                        width: 49.2,
-                                        height: 68.6,
-                                        fit: BoxFit.contain,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  boxShadow: [
+                                    BoxShadow(
+                                      blurRadius: 4.0,
+                                      color: Color(0x33000000),
+                                      offset: Offset(
+                                        0.0,
+                                        2.0,
+                                      ),
+                                    )
+                                  ],
+                                  borderRadius: BorderRadius.circular(24.0),
+                                  border: Border.all(
+                                    color:
+                                        FlutterFlowTheme.of(context).lineColor,
+                                  ),
+                                ),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.all(12.0),
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                        child: SvgPicture.asset(
+                                          'assets/images/Google_Favicon_2025.svg',
+                                          width: 49.2,
+                                          height: 68.6,
+                                          fit: BoxFit.contain,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  Text(
-                                    FFLocalizations.of(context).getText(
-                                      'wkv69t7b' /* Continue with Google */,
-                                    ),
-                                    textAlign: TextAlign.start,
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMediumFamily,
-                                          fontSize: 18.0,
-                                          letterSpacing: 0.0,
-                                          useGoogleFonts:
-                                              !FlutterFlowTheme.of(context)
-                                                  .bodyMediumIsCustom,
-                                        ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.all(10.0),
-                            child: Container(
-                              width: 500.0,
-                              height: 52.3,
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                boxShadow: [
-                                  BoxShadow(
-                                    blurRadius: 4.0,
-                                    color: Color(0x33000000),
-                                    offset: Offset(
-                                      0.0,
-                                      2.0,
-                                    ),
-                                  )
-                                ],
-                                borderRadius: BorderRadius.circular(24.0),
-                                border: Border.all(
-                                  color: FlutterFlowTheme.of(context).lineColor,
-                                ),
-                              ),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        28.0, 0.0, 0.0, 0.0),
-                                    child: FaIcon(
-                                      FontAwesomeIcons.apple,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      size: 30.0,
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        24.0, 0.0, 0.0, 0.0),
-                                    child: Text(
+                                    Text(
                                       FFLocalizations.of(context).getText(
-                                        'i2ehnfc9' /* Continue with Apple */,
+                                        'wkv69t7b' /* Continue with Google */,
                                       ),
                                       textAlign: TextAlign.start,
                                       style: FlutterFlowTheme.of(context)
@@ -434,8 +392,88 @@ class _LoginWidgetState extends State<LoginWidget>
                                                     .bodyMediumIsCustom,
                                           ),
                                     ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.all(10.0),
+                            child: InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                GoRouter.of(context).prepareAuthEvent();
+                                final user =
+                                    await authManager.signInWithApple(context);
+                                if (user == null) {
+                                  return;
+                                }
+
+                                context.goNamedAuth(
+                                    HomeWidget.routeName, context.mounted);
+                              },
+                              child: Container(
+                                width: 500.0,
+                                height: 52.3,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  boxShadow: [
+                                    BoxShadow(
+                                      blurRadius: 4.0,
+                                      color: Color(0x33000000),
+                                      offset: Offset(
+                                        0.0,
+                                        2.0,
+                                      ),
+                                    )
+                                  ],
+                                  borderRadius: BorderRadius.circular(24.0),
+                                  border: Border.all(
+                                    color:
+                                        FlutterFlowTheme.of(context).lineColor,
                                   ),
-                                ],
+                                ),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          28.0, 0.0, 0.0, 0.0),
+                                      child: FaIcon(
+                                        FontAwesomeIcons.apple,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        size: 30.0,
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          24.0, 0.0, 0.0, 0.0),
+                                      child: Text(
+                                        FFLocalizations.of(context).getText(
+                                          'i2ehnfc9' /* Continue with Apple */,
+                                        ),
+                                        textAlign: TextAlign.start,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily,
+                                              fontSize: 18.0,
+                                              letterSpacing: 0.0,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .bodyMediumIsCustom,
+                                            ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),

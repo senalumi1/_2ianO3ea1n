@@ -49,7 +49,7 @@ export '/pages/calendar_detail/calendar_detail_widget.dart'
     show CalendarDetailWidget;
 export '/pages/calendar_detail_post/calendar_detail_post_widget.dart'
     show CalendarDetailPostWidget;
-export '/pages/create_account/create_account_widget.dart'
-    show CreateAccountWidget;
 export '/pages/blockednumbers/blockednumbers_widget.dart'
     show BlockednumbersWidget;
+export '/pages/create_account/create_account_widget.dart'
+    show CreateAccountWidget;
