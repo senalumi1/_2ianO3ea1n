@@ -11,6 +11,8 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'design_model.dart';
 export 'design_model.dart';
+import '/auth/firebase_auth/auth_util.dart';
+
 
 class DesignWidget extends StatefulWidget {
   const DesignWidget({super.key});
@@ -343,6 +345,7 @@ class _DesignWidgetState extends State<DesignWidget>
                                                 queryBuilder:
                                                     (projectsRecord) =>
                                                         projectsRecord
+															.where('user_id', isEqualTo: currentUserUid)
                                                             .orderBy(
                                                                 'updated_at',
                                                                 descending:
